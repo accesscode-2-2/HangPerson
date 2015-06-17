@@ -56,17 +56,28 @@ int main(int argc, const char * argv[]) {
             
             scanf("%c", &userGuess);
             
-            for (int i = 0; i < 9; i++) {
+            for (taekwondo.myArray[i] = 0; taekwondo.myArray[i] < taekwondo.myArray[taekwondo.size - 1]; i++) {
                 
-                if (userGuess == i) {
+                if (&userGuess == taekwondo.myArray[i]) {
                     
                     i = userGuess;
                     
+                    taekwondo.emptyArray[i] = &userGuess;
                     
+                    printf("%s\n\n", taekwondo.emptyArray);
             
+                } else {
+                    
+                    printf("Incorrect guess!\n\n%s\n\n", taekwondo.emptyArray);
+                
                 }
                 
-            printf("%s\n\nYou have %d guesses left!\n\n", taekwondo.emptyArray, (taekwondo.guesses - 1));
+            printf("You have %d guesses left!\n\n", (taekwondo.guesses - 1));
+                
+                if (taekwondo.guesses == 0) {
+                    
+                    printf("GAME OVER ........ FATALITY!");
+                }
                 
             }
             

@@ -8,12 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-struct guesses {
-    int guesses;
-    char *myArray[9];
-    char *emptyArray[256];
-    int size;
-};
+//struct guesses {
+//    int guesses;
+//    char *myArray[9];
+//    char *emptyArray[256];
+//    int size;
+//};
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -30,59 +30,65 @@ int main(int argc, const char * argv[]) {
          
          build in a hint
          
+         'taekwondo'
+         
+         solved if userArray == myArray
          
          */
         
-        //word is 'taekwondo'
+
+
         
-        struct guesses taekwondo;
-        taekwondo.guesses = 12;
-        taekwondo.myArray[8] = "taekwondo";
-        taekwondo.emptyArray[255] = "*********";
-        taekwondo.size = 9;
+        printf("Hangman Game\n\n");
         
-        int solved = 0;
-        int i;
+        printf("I'm thinking of a word. Can you guess it?\n\n_ _ _ _ _ _ _ _ _\n\n");
         
-        printf("H-A-N-G-M-A-N\n\n");
+        char myArray[10] = "taekwondo";
         
-        printf("I'm thinking of a word with %d letters. Can you guess it?\n\n", taekwondo.size);
+        int myArraySpaces = 9;
         
-        while (!solved) {
+//        char userArray[10] = "_________";
+        char userArray[20] = "_ _ _ _ _ _ _ _ _";
+
+        
+        int userGuessesLeft = 8;
+        
+        while (userGuessesLeft != 0) {
             
-            printf("Enter your letter here: ");
+            printf("Enter char here: ");
             
             char userGuess;
+            scanf(" %c", &userGuess);
+            fpurge(stdin);
             
-            scanf("%c", &userGuess);
             
-            for (taekwondo.myArray[i] = 0; taekwondo.myArray[i] < taekwondo.myArray[taekwondo.size - 1]; i++) {
+            for (int i = 0; i < myArraySpaces; i++) {
                 
-                if (&userGuess == taekwondo.myArray[i]) {
+                if (myArray[i] == userGuess) {
                     
-                    i = userGuess;
+                    userArray[i * 2] = userGuess;
                     
-                    taekwondo.emptyArray[i] = &userGuess;
+                    printf("%s\n\n", userArray);
                     
-                    printf("%s\n\n", taekwondo.emptyArray);
-            
+                    if (strcmp(userArray, myArray) == 0) {
+                        
+                        printf("You win!");
+                    }
+                    
                 } else {
                     
-                    printf("Incorrect guess!\n\n%s\n\n", taekwondo.emptyArray);
-                
                 }
-                
-            printf("You have %d guesses left!\n\n", (taekwondo.guesses - 1));
-                
-                if (taekwondo.guesses == 0) {
-                    
-                    printf("GAME OVER ........ FATALITY!");
-                }
-                
             }
             
+            userGuessesLeft -= 1;
             
-            break;
+            printf("You have %d guesses left!\n\n", userGuessesLeft);
+
+            
+        } if (userGuessesLeft == 0 && strcmp(userArray, myArray)) {
+            
+            printf("GAME OVER ... FATALITY!");
+            
         }
     }
     return 0;

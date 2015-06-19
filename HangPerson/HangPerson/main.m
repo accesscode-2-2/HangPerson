@@ -20,7 +20,7 @@ int main(int argc, const char * argv[]) {
         //I would also like to add a maximum number of guesses
         
         
-        char guessedLette;
+        char guessedLetter;
         char secretWord1[7] = "unicorn";
         char blankSpaces1[7] = "_______";
         

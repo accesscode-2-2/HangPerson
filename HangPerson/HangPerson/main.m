@@ -39,9 +39,24 @@ int main(int argc, const char * argv[]) {
 
 
         
-        printf("Hangman Game\n\n");
+        printf("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n");
+        printf("*                                                                   *\n");
+        printf("*    hh  hh      aaa      nnn   nn   gggggg                         *\n");
+        printf("*    hh  hh     aa aa     nnnn  nn  gg                              *\n");
+        printf("*    hhhhhh    aa   aa    nn nn nn  gg  gggg   |------|             *\n");
+        printf("*    hh  hh   aaaaaaaaa   nn  nnnn  gg    gg   |------|             *\n");
+        printf("*    hh  hh  aaa     aaa  nn   nnn   gggggg                         *\n");
+        printf("*                                                                   *\n");
+        printf("*                          mmm   mmm          aaa      nnn    nn    *\n");
+        printf("*                         mm mm mm mm        aa aa     nnnn   nn    *\n");
+        printf("*                        mm   mmm   mm      aa   aa    nn nn  nn    *\n");
+        printf("*                       mm     m     mm    aaaaaaaaa   nn  nnnnn    *\n");
+        printf("*                      mmm           mmm  aaa     aaa  nn    nnn    *\n");
+        printf("*                                                                   *\n");
+        printf("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n");
         
-        printf("I'm thinking of a word. Can you guess it?\n\n_ _ _ _ _ _ _ _ _\n\n");
+        
+        printf("\n\nI'm thinking of a word. Can you guess it?\n\n_ _ _ _ _ _ _ _ _\n\n");
         
         char myArray[10] = "taekwondo";
         

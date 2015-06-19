@@ -8,53 +8,59 @@
 
 #import <Foundation/Foundation.h>
 
-//struct guesses {
-//    int guesses;
-//    char *myArray[9];
-//    char *emptyArray[256];
-//    int size;
-//};
+void printLabel() {
+    
+    printf("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n");
+    printf("*                                                                   *\n");
+    printf("*    hh  hh      aaa      nnn   nn   gggggg                         *\n");
+    printf("*    hh  hh     aa aa     nnnn  nn  gg                              *\n");
+    printf("*    hhhhhh    aa   aa    nn nn nn  gg  gggg   |------|             *\n");
+    printf("*    hh  hh   aaaaaaaaa   nn  nnnn  gg    gg   |------|             *\n");
+    printf("*    hh  hh  aaa     aaa  nn   nnn   gggggg                         *\n");
+    printf("*                                                                   *\n");
+    printf("*                          mmm   mmm          aaa      nnn    nn    *\n");
+    printf("*                         mm mm mm mm        aa aa     nnnn   nn    *\n");
+    printf("*                        mm   mmm   mm      aa   aa    nn nn  nn    *\n");
+    printf("*                       mm     m     mm    aaaaaaaaa   nn  nnnnn    *\n");
+    printf("*                      mmm           mmm  aaa     aaa  nn    nnn    *\n");
+    printf("*                                                                   *\n");
+    printf("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n");
+}
+
+void printStars() {
+    
+    sleep(1);
+    
+    printf("*\n");
+    printf(" *\n");
+    printf("  *\n");
+    printf("   *\n");
+    printf("    *\n");
+    printf("     *\n");
+    printf("      *\n");
+    printf("       *\n");
+    printf("        *\n");
+    printf("         *\n");
+    
+    printf("          *\n");
+    printf("           *\n");
+    printf("            *\n");
+    printf("             *\n");
+    printf("              *\n");
+    printf("               *\n");
+    printf("                *\n");
+    printf("                 *\n");
+    printf("                  *\n");
+    printf("                   *\n");
+    
+    sleep(1);
+}
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
-        /* Probably need some char action
-         
-         blank spaces _ _ _ _ _ _ _ _ _ <--like this
-         
-         every time for user input I need a scanf
-         
-         loop through every character and compare it to guess
-         
-         if guess matches a letter, do the 'swap' function with it
-         
-         build in a hint
-         
-         'taekwondo'
-         
-         solved if userArray == myArray
-         
-         */
-        
-
-
-        
-        printf("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n");
-        printf("*                                                                   *\n");
-        printf("*    hh  hh      aaa      nnn   nn   gggggg                         *\n");
-        printf("*    hh  hh     aa aa     nnnn  nn  gg                              *\n");
-        printf("*    hhhhhh    aa   aa    nn nn nn  gg  gggg   |------|             *\n");
-        printf("*    hh  hh   aaaaaaaaa   nn  nnnn  gg    gg   |------|             *\n");
-        printf("*    hh  hh  aaa     aaa  nn   nnn   gggggg                         *\n");
-        printf("*                                                                   *\n");
-        printf("*                          mmm   mmm          aaa      nnn    nn    *\n");
-        printf("*                         mm mm mm mm        aa aa     nnnn   nn    *\n");
-        printf("*                        mm   mmm   mm      aa   aa    nn nn  nn    *\n");
-        printf("*                       mm     m     mm    aaaaaaaaa   nn  nnnnn    *\n");
-        printf("*                      mmm           mmm  aaa     aaa  nn    nnn    *\n");
-        printf("*                                                                   *\n");
-        printf("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n");
-        
+        printLabel();
+        printStars();
         
         printf("\n\nI'm thinking of a word. Can you guess it?\n\n_ _ _ _ _ _ _ _ _\n\n");
         
@@ -62,7 +68,6 @@ int main(int argc, const char * argv[]) {
         
         int myArraySpaces = 9;
         
-//        char userArray[10] = "_________";
         char userArray[20] = "_ _ _ _ _ _ _ _ _";
 
         

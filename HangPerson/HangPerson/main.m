@@ -2,21 +2,46 @@
 //  main.m
 //  HangPerson
 //
-//  Created by Michael Kavouras on 6/15/15.
-//  Copyright (c) 2015 Mike Kavouras. All rights reserved.
-//
+//  Henna Ahmed
 
 #import <Foundation/Foundation.h>
+
+void printGuessArray(char *arr, int size){
+    for (int i = 0; i<size; i++) {
+        if (arr[i] == ':') {
+            printf("\t");
+        }
+        else{
+            printf("%c ", arr[i]);
+        }
+    }
+
+}
+
+void printCharArray(char *arr, int size){
+    for (int i = 0; i<size; i++) {
+        usleep(2e4);
+            printf("%c", arr[i]);
+    }
+    
+}
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
-        char phrase[] = "A Penny Saved Is A Penny Earned";
-        int sizeOfPhrase = sizeof(phrase)/sizeof(char);
-        char alreadyGuessed[26];
-        char guess[sizeOfPhrase]; //clone array for user guesses
         
-        //initialize guess array
+        char phrase[] = "A Penny Saved Is A Penny Earned",
+        alreadyGuessed[26]; // chars already guessed
+        
+        int sizeOfPhrase = sizeof(phrase)/sizeof(char);
+        char guess[sizeOfPhrase]; //clone array for user visual
+        
+        int numberOfGuesses = 5;
+        int guessCount = 0;
+
+        
+        //Print initialized guess array
+
         for (int i = 0; i< sizeOfPhrase-1; i++) {
             if (phrase[i] == ' ') {
                 guess[i] = ':';
@@ -27,20 +52,9 @@ int main(int argc, const char * argv[]) {
         }
         
         printf("Let's Play Hang Person! \n\n");
-        
-        //print guess array
-        
-        for (int i = 0; i<sizeOfPhrase; i++) {
-            if (guess[i] == ':') {
-                printf("\t");
-            }
-            else{
-            printf("%c ", guess[i]);
-            }
-        }
-        
-        int numberOfGuesses = 5;
-        int guessCount = 0;
+
+        printGuessArray(guess, sizeOfPhrase);
+        printf("\nNumber of wrong guesses left: %d\n", numberOfGuesses);
         
         while (true) {
             BOOL guessed = YES;
@@ -52,7 +66,8 @@ int main(int argc, const char * argv[]) {
             }
             
             if (numberOfGuesses<1) {
-                printf("\n\nSorry, you lost the game");
+                printf("\n\nSorry, you lost! The correct phrase was:\n");
+                printCharArray(phrase, sizeOfPhrase);
                 break;
             }
             else if (guessed) {
@@ -63,7 +78,7 @@ int main(int argc, const char * argv[]) {
                 char input;
                 bool alreadyInGuessArray = NO;
                 bool correctGuess = NO;
-                printf("\n\nGuess a letter: ");
+                printf("Guess a letter: ");
                 fpurge(stdin);
                 scanf("%c", &input);
                 
@@ -72,7 +87,7 @@ int main(int argc, const char * argv[]) {
                 
                 for (int i = 0; i<26; i++) {
                     if (alreadyGuessed[i] == input) {
-                        printf("\nYou already guessed the letter %c \n\n", input);
+                        printf("\n\nYou already guessed the letter %c\n", input);
                         alreadyInGuessArray = YES;
                     }
                 }
@@ -89,25 +104,18 @@ int main(int argc, const char * argv[]) {
                     
                     if (!correctGuess) {
                         numberOfGuesses--;
-                        printf("\nTry Again! %c is not in this phrase \n", input);
-                        if(numberOfGuesses==0){
-                        }
-                        else {
-                            printf("You have %d wrong answers left \n \n", numberOfGuesses);
-                        }
+                        printf("\n\nTry Again! %c is not in this phrase\n", input);
                         
+                    }
+                    else {
+                        printf("\n\n");
                     }
                     
                 }
                 
-                for (int i = 0; i<sizeOfPhrase; i++) {
-                    if (guess[i] == ':') {
-                        printf("\t");
-                    }
-                    else{
-                        printf("%c ", guess[i]);
-                    }
-                }
+                printGuessArray(guess, sizeOfPhrase);
+                printf("\nNumber of wrong guesses left: %d\n", numberOfGuesses);
+                
                 
             }
         }

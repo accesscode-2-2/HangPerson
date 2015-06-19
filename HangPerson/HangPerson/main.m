@@ -12,6 +12,8 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
         // code goes here...
+        
+        printf("hi my name is mike");
 
     }
     return 0;

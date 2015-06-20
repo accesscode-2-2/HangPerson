@@ -27,40 +27,10 @@ void printLabel() {
     printf("* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n");
 }
 
-void printStars() {
-    
-    sleep(1);
-    
-    printf("*\n");
-    printf(" *\n");
-    printf("  *\n");
-    printf("   *\n");
-    printf("    *\n");
-    printf("     *\n");
-    printf("      *\n");
-    printf("       *\n");
-    printf("        *\n");
-    printf("         *\n");
-    
-    printf("          *\n");
-    printf("           *\n");
-    printf("            *\n");
-    printf("             *\n");
-    printf("              *\n");
-    printf("               *\n");
-    printf("                *\n");
-    printf("                 *\n");
-    printf("                  *\n");
-    printf("                   *\n");
-    
-    sleep(1);
-}
-
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
         printLabel();
-        printStars();
         
         printf("\n\nI'm thinking of a word. Can you guess it?\n\n_ _ _ _ _ _ _ _ _\n\n");
         

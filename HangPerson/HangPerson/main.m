@@ -6,13 +6,31 @@
 //  Copyright (c) 2015 Mike Kavouras. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#include <stdio.h>
 
 int main(int argc, const char * argv[]) {
-    @autoreleasepool {
+    
+    char word[] = "code";
+    char guess;
+    
+    printf("Enter a letter: ");
+    
+    for (int i = 0; i < 10; i++) {
         
-        // code goes here...
-
+        scanf("%c", &guess);
+        
+        if (guess == word [i]) {
+            guess = word [i];
+            printf("%c", word[i]);
+        }
+        
+        if (i == 9) {
+            
+            printf("You lose!");
+            
+        }
+        
     }
+    
     return 0;
 }

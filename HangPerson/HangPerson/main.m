@@ -12,7 +12,6 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
-   
 
         char *Words[] = {"album","music","strat","dooky","guitar","animal","battlestar","galactica","pegasus"};
         
